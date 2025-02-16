@@ -1,11 +1,9 @@
-
+// Write a JavaScript function countWords  that takes a string and returns the number of words contained in this string. 
 
 function countWords(sentence){
     let sentenceSplit = sentence.split(" ")
-    let count=0;
-    for(let i of sentenceSplit){
-        count=count+1;
-    }
+    let count = sentenceSplit.length;
+
     return count;
 }
 
