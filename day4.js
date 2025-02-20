@@ -17,7 +17,7 @@ function getNewArray(arr){
     let newArr =[];
 
     for(let i of arr){
-        if(i % 2 === 1 || i === 0){
+        if(i%2===1 || i===0){
             newArr.push(i);
         }
     }
@@ -34,5 +34,5 @@ function getNewArray(arr){
     return newArr;
 }
 
-console.log(getNewArray([1, 2, 3]));
+console.log(getNewArray([ 3, 6, 5, 4, 8, 10 ]));
 
