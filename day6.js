@@ -7,7 +7,7 @@
 function filterIntegers( arr ){
 
     if(arr.length <= 0){
-        return "Invalid Item"
+        return "Invalid Item";
     }
 
     let filterInteger =[];
