@@ -1,5 +1,9 @@
 // Write a JavaScript function filterIntegers  that takes an array that contains string and integer elements, and returns a new array with only integer elements.
 
+// Example 1:
+
+// Output: [ 3, 6,  4,  8]`
+
 // Constraints:
 // Array length cannot be zero or negative.
 
@@ -20,7 +24,4 @@ function filterIntegers( arr ){
     return filterInteger;
 }
 
-
-// Example 1:
-console.log(filterIntegers([ 3, 6, "hello", 4, "3",  8]));
-// Output: [ 3, 6,  4,  8]`
+console.log(filterIntegers([ 3, 6, "hello", 4, "3", 8]));

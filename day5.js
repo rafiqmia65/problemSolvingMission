@@ -20,10 +20,6 @@ console.log(reverseArray(numbers));
 
 console.log(numbers)
 
-
-
-
-
 // Another Way
 
 // function reverse(arr){
