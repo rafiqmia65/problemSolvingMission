@@ -40,3 +40,5 @@ function patternPrint(number){
 }
 
 console.log(patternPrint(10))
+
+
