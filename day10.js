@@ -39,6 +39,6 @@ function patternPrint(number){
     return pattern;
 }
 
-console.log(patternPrint(10))
+console.log(patternPrint(5))
 
 
