@@ -44,6 +44,6 @@ function findMax(arr) {
   return max;
 }
 
-console.log(findMax([3, 7, 2, 9, 1])); // Output: 9
-console.log(findMax([])); // Output: "Input must be a non-empty array."
-console.log(findMax([3, 7, "2", 9, 1])); // Output: "All elements in the array must be numbers."
+// console.log(findMax([3, 7, 2, 9, 1])); // Output: 9
+// console.log(findMax([])); // Output: "Input must be a non-empty array."
+// console.log(findMax([3, 7, "2", 9, 1])); // Output: "All elements in the array must be numbers."
