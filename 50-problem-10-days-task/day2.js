@@ -1,4 +1,4 @@
-// Problem 6: Reverse a String  [Easy]
+//* Problem 6: Reverse a String  [Easy]
 // Description: Write a function reverseString(str) that returns the reverse of a given string.
 // Example:
 // Input: 'hello'   → Output: 'olleh'Input: 'world'   → Output: 'dlrow'
@@ -20,12 +20,12 @@ function reverseString(str) {
   return reversed;
 }
 
-// Test cases
+//* Test cases
 // console.log(reverseString("hello")); // Output: 'olleh'
 // console.log(reverseString("world")); // Output: 'dlrow'
 // console.log(reverseString(123)); // Output: 'Input must be a string'
 
-// Problem 7: Count Vowels in a String  [Easy]
+//* Problem 7: Count Vowels in a String  [Easy]
 // Description: Write a function countVowels(str) that counts and returns the number of vowels (a, e, i, o, u) in a string.
 // Example:
 // Input: 'hello'   → Output: 2Input: 'javascript' → Output: 3
@@ -47,12 +47,12 @@ function countVowels(str) {
   return count;
 }
 
-// Test cases
+//* Test cases
 // console.log(countVowels("hello")); // Output: 2
 // console.log(countVowels("javascript")); // Output: 3
 // console.log(countVowels(123)); // Output: 'Input must be a string'
 
-// Problem 8: Check Palindrome  [Easy]
+//* Problem 8: Check Palindrome  [Easy]
 // Description: Write a function isPalindrome(str) that returns true if the string reads the same forwards and backwards.
 // Example:
 // Input: 'racecar'  → Output: trueInput: 'hello'    → Output: false
@@ -71,12 +71,12 @@ function isPalindrome(str) {
   return newString === str;
 }
 
-// Test cases
+//* Test cases
 // console.log(isPalindrome("racecar")); // Output: true
 // console.log(isPalindrome("hello")); // Output: false
 // console.log(isPalindrome(123)); // Output: 'Input must be a string'
 
-// Problem 9: Capitalize First Letter of Each Word  [Easy]
+//* Problem 9: Capitalize First Letter of Each Word  [Easy]
 // Description: Write a function titleCase(str) that capitalizes the first letter of every word in a string.
 // Example:
 // Input: 'hello world'  → Output: 'Hello World'
@@ -93,11 +93,11 @@ function titleCase(str) {
     .join(" ");
 }
 
-// Test cases
+//* Test cases
 // console.log(titleCase("hello world")); // Output: 'Hello World'
 // console.log(titleCase(123)); // Output: 'Input must be a string'
 
-// Problem 10: Count Occurrences of a Character  [Easy]
+//* Problem 10: Count Occurrences of a Character  [Easy]
 // Description: Write a function countChar(str, char) that returns how many times a character appears in a string.
 // Example:
 // Input: 'banana', 'a'  → Output: 3
@@ -121,7 +121,7 @@ function countChar(str, char) {
   return count;
 }
 
-// Test cases
+//* Test cases
 // console.log(countChar("banana", "a")); // Output: 3
 // console.log(countChar("hello world", "o")); // Output: 2
 // console.log(countChar(123, "1")); // Output: 'Both inputs must be strings'

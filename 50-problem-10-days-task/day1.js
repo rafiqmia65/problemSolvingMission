@@ -1,4 +1,4 @@
-// Problem 1: Swap Two Variables  [Easy]
+//* Problem 1: Swap Two Variables  [Easy]
 // Description: Write a function that swaps the values of two variables without using a third variable.
 // Example:
 // Input: a = 5, b = 10Output: a = 10, b = 5
@@ -16,9 +16,10 @@ function swap(a, b) {
   return [a, b];
 }
 
+//* Test cases
 // console.log(swap(5, 10)); // [10, 5]
 
-// Problem 2: Check Even or Odd  [Easy]
+//* Problem 2: Check Even or Odd  [Easy]
 // Description: Write a function isEven(n) that returns true if a number is even, and false if it is odd.
 // Example:
 // Input: 4  → Output: trueInput: 7  → Output: false
@@ -36,11 +37,12 @@ const isEven = (n) => {
   }
 };
 
+//* Test cases
 // console.log(isEven(4)); // true
 // console.log(isEven(7)); // false
 // console.log(isEven("not a number")); // "Input must be a number."
 
-// Problem 3: Find the Largest of Three Numbers  [Easy]
+//* Problem 3: Find the Largest of Three Numbers  [Easy]
 // Description: Write a function largest(a, b, c) that returns the largest of three numbers.
 // Example:
 // Input: 3, 7, 5  → Output: 7
@@ -63,11 +65,12 @@ const largest = (a, b, c) => {
   // return Math.max(a, b, c);
 };
 
+//* Test cases
 // console.log(largest(3, 7, 5)); // 7
 // console.log(largest(10, 2, 8)); // 10
 // console.log(largest("not a number", 2, 8)); // "All inputs must be numbers."
 
-// Problem 4: Celsius to Fahrenheit  [Easy]
+//* Problem 4: Celsius to Fahrenheit  [Easy]
 // Description: Write a function toFahrenheit(celsius) that converts a Celsius temperature to Fahrenheit.
 // Example:
 // Input: 0   → Output: 32Input: 100 → Output: 212
@@ -80,11 +83,12 @@ const toFahrenheit = (celsius) => {
   return (celsius * 9) / 5 + 32;
 };
 
+//* Test cases
 // console.log(toFahrenheit(0)); // 32
 // console.log(toFahrenheit(100)); // 212
 // console.log(toFahrenheit("not a number")); // "Input must be a number."
 
-// Problem 5: Check Positive, Negative or Zero  [Easy]
+//* Problem 5: Check Positive, Negative or Zero  [Easy]
 // Description: Write a function checkSign(n) that returns 'positive', 'negative', or 'zero' based on the value of n.
 // Example:
 // Input: -5  → Output: 'negative'Input: 0   → Output: 'zero'
@@ -103,6 +107,7 @@ const checkSign = (n) => {
   }
 };
 
+//* Test cases
 // console.log(checkSign(-5)); // 'negative'
 // console.log(checkSign(0)); // 'zero'
 // console.log(checkSign(10)); // 'positive'
