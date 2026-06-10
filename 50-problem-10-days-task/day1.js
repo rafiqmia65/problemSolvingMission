@@ -1,3 +1,5 @@
+//** Day 1 — Functions & Scope */
+
 //* Problem 1: Swap Two Variables  [Easy]
 // Description: Write a function that swaps the values of two variables without using a third variable.
 // Example:

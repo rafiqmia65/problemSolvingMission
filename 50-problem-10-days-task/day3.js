@@ -1,3 +1,5 @@
+//** Day 3 — Functions & Scope */
+
 //* Problem 11: Find the Sum of an Array  [Easy]
 // Description: Write a function sumArray(arr) that returns the sum of all numbers in an array.
 // Example:

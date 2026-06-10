@@ -1,3 +1,5 @@
+//** Day 2 — Functions & Scope */
+
 //* Problem 6: Reverse a String  [Easy]
 // Description: Write a function reverseString(str) that returns the reverse of a given string.
 // Example:

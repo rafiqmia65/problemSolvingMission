@@ -1,3 +1,5 @@
+//** Day 4 — Functions & Scope */
+
 //* Problem 16: Count Object Properties  [Easy]
 // Description: Write a function countProperties(obj) that returns the number of properties in an object.
 // Example:
