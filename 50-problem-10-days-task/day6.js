@@ -78,3 +78,15 @@ async function getUserData(id) {
 //   const userData = await getUserData(1);
 //   console.log(userData); // Output: { id: 1, name: 'Test User' }
 // })();
+
+//* Problem 30: Optional Chaining & Nullish Coalescing  [Easy]
+// Description: Given a nested object that may have missing properties, safely access a deeply nested value using optional chaining (?.) and provide a default using nullish coalescing (??).
+// Example:
+// const user = {profile: null};const city = user?.profile?.address?.city ?? 'Unknown';// Output: 'Unknown'
+// Hint: Chain ?. for each level; use ?? for the fallback.
+
+const user2 = { profile: null };
+const city = user2?.profile?.address?.city ?? "Unknown";
+
+//* Test cases
+// console.log(city); // Output: 'Unknown'
