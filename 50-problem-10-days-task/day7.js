@@ -54,7 +54,7 @@ function throttle(fn, limit) {
 // throttledScroll(); // No output (called within 200ms)
 // setTimeout(() => throttledScroll(), 250); // Logs "Scrolled!" after 250ms
 
-// Problem 33: Deep Clone an Object  [Medium]
+//* Problem 33: Deep Clone an Object  [Medium]
 // Description: Write a function deepClone(obj) that returns a deep copy of a plain object without using JSON.parse/JSON.stringify.
 // Example:
 // const a = {x: {y: 1}};const b = deepClone(a);b.x.y = 99;// a.x.y is still 1
@@ -84,7 +84,7 @@ function deepClone(obj) {
 // console.log(a.x.y); // 1 (original object is unaffected)
 // console.log(a.arr); // [1, 2, 3] (original array is unaffected)
 
-// Problem 34: Event Emitter  [Medium]
+//* Problem 34: Event Emitter  [Medium]
 // Description: Build a simple EventEmitter class with on(event, listener), emit(event, ...args), and off(event, listener) methods.
 // Example:
 // const emitter = new EventEmitter();emitter.on('greet', name => console.log('Hello ' + name));emitter.emit('greet', 'Sara'); // Hello Sara
@@ -121,3 +121,35 @@ class EventEmitter {
 // emitter.emit("greet", "Sara"); // Hello Sara
 // emitter.off("greet", greet);
 // emitter.emit("greet", "Sara"); // No output (listener removed)
+
+//* Problem 35: Implement Array.prototype.map from Scratch  [Medium]
+// Description: Write a function myMap(arr, callback) that replicates the behavior of Array.prototype.map without using the built-in map().
+// Example:
+// myMap([1,2,3], x => x * 2);// Output: [2, 4, 6]
+// Hint: Loop through the array, apply the callback to each element, push results to a new array.
+
+function myMap(arr, callback) {
+  const result = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    result.push(callback(arr[i], i, arr));
+  }
+
+  return result;
+
+  // Alternative using for...of loop
+
+  // const result = [];
+
+  // for (const item of arr) {
+  //   result.push(callback(item));
+  // }
+
+  // return result;
+}
+
+//* Test Cases
+// const arr = [1, 2, 3];
+// const mappedArr = myMap(arr, (x) => x * 2);
+// console.log(mappedArr); // [2, 4, 6]
+// console.log(arr); // [1, 2, 3] (original array is unchanged)
