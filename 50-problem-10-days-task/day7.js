@@ -83,3 +83,41 @@ function deepClone(obj) {
 // b.arr.push(4);
 // console.log(a.x.y); // 1 (original object is unaffected)
 // console.log(a.arr); // [1, 2, 3] (original array is unaffected)
+
+// Problem 34: Event Emitter  [Medium]
+// Description: Build a simple EventEmitter class with on(event, listener), emit(event, ...args), and off(event, listener) methods.
+// Example:
+// const emitter = new EventEmitter();emitter.on('greet', name => console.log('Hello ' + name));emitter.emit('greet', 'Sara'); // Hello Sara
+// Hint: Store listeners in an object where keys are event names and values are arrays of functions.
+
+class EventEmitter {
+  constructor() {
+    this.events = {};
+  }
+  on(event, listener) {
+    if (!this.events[event]) {
+      this.events[event] = [];
+    }
+    this.events[event].push(listener);
+  }
+  emit(event, ...args) {
+    if (this.events[event]) {
+      this.events[event].forEach((listener) => listener(...args));
+    }
+  }
+  off(event, listener) {
+    if (this.events[event]) {
+      this.events[event] = this.events[event].filter((l) => l !== listener);
+    }
+  }
+}
+
+//* Test Cases
+// const emitter = new EventEmitter();
+// function greet(name) {
+//   console.log("Hello " + name);
+// }
+// emitter.on("greet", greet);
+// emitter.emit("greet", "Sara"); // Hello Sara
+// emitter.off("greet", greet);
+// emitter.emit("greet", "Sara"); // No output (listener removed)
