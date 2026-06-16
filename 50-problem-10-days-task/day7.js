@@ -53,3 +53,33 @@ function throttle(fn, limit) {
 // throttledScroll(); // Logs "Scrolled!"
 // throttledScroll(); // No output (called within 200ms)
 // setTimeout(() => throttledScroll(), 250); // Logs "Scrolled!" after 250ms
+
+// Problem 33: Deep Clone an Object  [Medium]
+// Description: Write a function deepClone(obj) that returns a deep copy of a plain object without using JSON.parse/JSON.stringify.
+// Example:
+// const a = {x: {y: 1}};const b = deepClone(a);b.x.y = 99;// a.x.y is still 1
+// Hint: Use recursion and check for object/array types.
+
+function deepClone(obj) {
+  if (obj === null || typeof obj !== "object") {
+    return obj; // Return primitives and null as is
+  }
+  if (Array.isArray(obj)) {
+    return obj.map(deepClone); // Recursively clone array elements
+  }
+  const clonedObj = {};
+  for (const key in obj) {
+    if (obj.hasOwnProperty(key)) {
+      clonedObj[key] = deepClone(obj[key]); // Recursively clone object properties
+    }
+  }
+  return clonedObj;
+}
+
+//* Test Cases
+// const a = { x: { y: 1 }, arr: [1, 2, 3] };
+// const b = deepClone(a);
+// b.x.y = 99;
+// b.arr.push(4);
+// console.log(a.x.y); // 1 (original object is unaffected)
+// console.log(a.arr); // [1, 2, 3] (original array is unaffected)
