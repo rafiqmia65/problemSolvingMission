@@ -69,3 +69,77 @@ async function retry(fn, times) {
 //     console.error("Final Error:", error.message);
 //   }
 // })();
+
+//* Problem 38: Implement Promise.all from Scratch  [Hard]
+// Description: Write a function myPromiseAll(promises) that behaves like Promise.all — resolves with an array of results when all resolve, rejects immediately if any rejects.
+// Example:
+// myPromiseAll([p1, p2, p3]).then(results => console.log(results));
+// Hint: Track resolved count and results array; reject on first failure.
+
+function myPromiseAll(promises) {
+  return new Promise((resolve, reject) => {
+    const results = [];
+    let completed = 0;
+
+    // Handle empty array
+    if (promises.length === 0) {
+      resolve([]);
+      return;
+    }
+
+    promises.forEach((promise, index) => {
+      Promise.resolve(promise)
+        .then((value) => {
+          results[index] = value;
+          completed++;
+
+          if (completed === promises.length) {
+            resolve(results);
+          }
+        })
+        .catch((error) => {
+          reject(error);
+        });
+    });
+  });
+}
+
+// * Test Cases 1
+// const p1 = Promise.resolve("React");
+// const p2 = Promise.resolve("Node");
+// const p3 = Promise.resolve("MongoDB");
+
+// myPromiseAll([p1, p2, p3])
+//   .then((results) => {
+//     console.log(results);
+//   })
+//   .catch((err) => {
+//     console.error(err);
+//   });
+
+// Output: ["React", "Node", "MongoDB"]
+
+// * Test Cases 2
+// const p4 = Promise.reject("Error in p4");
+// const p5 = Promise.resolve("Express");
+
+// myPromiseAll([p4, p5])
+//   .then((results) => {
+//     console.log(results);
+//   })
+//   .catch((err) => {
+//     console.error(err);
+//   });
+
+// Output: "Error in p4"
+
+//* Test Cases 3 - Empty Array
+// myPromiseAll([])
+//   .then((results) => {
+//     console.log(results);
+//   })
+//   .catch((err) => {
+//     console.error(err);
+//   });
+
+// Output: []
