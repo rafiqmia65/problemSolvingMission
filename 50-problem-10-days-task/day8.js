@@ -168,3 +168,33 @@ function flattenObject(obj, parentKey = "", result = {}) {
 // console.log(flattenObject({ a: { b: { c: 1 } } })); // { 'a.b.c': 1 }
 // console.log(flattenObject({ x: 1, y: { z: 2 } })); // { x: 1, 'y.z': 2 }
 // console.log(flattenObject({})); // {}
+
+//* Problem 40: Group Array by Property  [Medium]
+// Description: Write a function groupBy(arr, key) that groups an array of objects by a given property key.
+// Example:
+// groupBy([{type:'fruit',name:'apple'},{type:'veg',name:'carrot'},{type:'fruit',name:'mango'}], 'type')// {fruit: [...], veg: [...]}
+// Hint: Use reduce() and build an object where each key maps to an array.
+
+function groupBy(arr, key) {
+  return arr.reduce((acc, obj) => {
+    const groupKey = obj[key];
+    if (!acc[groupKey]) {
+      acc[groupKey] = []; // Initialize array if key doesn't exist
+    }
+    acc[groupKey].push(obj); // Push the object into the corresponding group
+    return acc;
+  }, {});
+}
+
+//* Test Cases
+// console.log(
+//   groupBy(
+//     [
+//       { type: "fruit", name: "apple" },
+//       { type: "veg", name: "carrot" },
+//       { type: "fruit", name: "mango" },
+//     ],
+//     "type",
+//   ),
+// );
+// Output: { fruit: [{ type: 'fruit', name: 'apple' }, { type: 'fruit', name: 'mango' }], veg: [{ type: 'veg', name: 'carrot' }] }
