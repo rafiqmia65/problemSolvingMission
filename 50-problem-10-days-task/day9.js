@@ -76,3 +76,40 @@ function isAnagram(str1, str2) {
 // console.log(isAnagram("hello", "world")); // Output: false
 // console.log(isAnagram("Dormitory", "Dirty Room")); // Output: true
 // console.log(isAnagram("The eyes", "They see")); // Output: true
+
+//* Problem 43: Find Missing Number  [Easy]
+// Description: Given an array of n-1 integers from 1 to n with one number missing, write a function findMissing(arr, n) to find the missing number.
+// Example:
+// Input: [1,2,4,5], n=5  → Output: 3
+// Hint: Use the formula: expected sum = n*(n+1)/2, then subtract actual sum.
+
+function findMissing(arr, n) {
+  // =========================
+  // Solution 1: Sum Formula
+  // =========================
+
+  // const expectedSum = (n * (n + 1)) / 2;
+  // const actualSum = arr.reduce((acc, num) => acc + num, 0);
+  // return expectedSum - actualSum;
+
+  // =========================
+  // Solution 2: XOR Method
+  // =========================
+
+  let xor = 0;
+
+  for (let i = 1; i <= n; i++) {
+    xor ^= i;
+  }
+
+  for (const num of arr) {
+    xor ^= num;
+  }
+
+  return xor;
+}
+
+// * Test Cases
+// console.log(findMissing([1, 2, 4, 5], 5)); // Output: 3
+// console.log(findMissing([1, 2, 3, 5], 5)); // Output: 4
+// console.log(findMissing([2, 3, 4, 5], 5)); // Output: 1
