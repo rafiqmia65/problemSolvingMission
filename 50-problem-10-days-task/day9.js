@@ -113,3 +113,34 @@ function findMissing(arr, n) {
 // console.log(findMissing([1, 2, 4, 5], 5)); // Output: 3
 // console.log(findMissing([1, 2, 3, 5], 5)); // Output: 4
 // console.log(findMissing([2, 3, 4, 5], 5)); // Output: 1
+
+//* Problem 44: Valid Parentheses  [Medium]
+// Description: Write a function isValidParentheses(str) that returns true if the string has valid, balanced parentheses, brackets, and braces.
+// Example:
+// Input: '()[]{}'  → Output: trueInput: '([)]'    → Output: false
+// Hint: Use a stack (array). Push opening brackets, pop and compare for closing ones.
+
+function isValidParentheses(str) {
+  const stack = [];
+  const pairs = {
+    ")": "(",
+    "]": "[",
+    "}": "{",
+  };
+
+  for (const char of str) {
+    if (["(", "[", "{"].includes(char)) {
+      stack.push(char);
+    } else if (pairs[char]) {
+      if (stack.pop() !== pairs[char]) {
+        return false;
+      }
+    }
+  }
+
+  return stack.length === 0;
+}
+
+// * Test Cases
+// console.log(isValidParentheses("()[]{}")); // Output: true
+// console.log(isValidParentheses("([)]")); // Output: false
