@@ -27,3 +27,23 @@ function wordCount(sentence) {
 // * Test Cases
 // console.log(wordCount("the cat sat on the mat")); // Output: { the: 2, cat: 1, sat: 1, on: 1, mat: 1 }
 // console.log(wordCount("Hello hello world")); // Output: { hello: 2, world: 1 }
+
+// * Problem 47: Longest Word in a Sentence  [Easy]
+// Description: Write a function longestWord(sentence) that returns the longest word in a sentence. If there's a tie, return the first one.
+// Example:
+// Input: 'The quick brown fox'Output: 'quick'
+// Hint: Split the sentence and use reduce() to track the longest.
+
+function longestWord(sentence) {
+  const words = sentence.split(/\s+/);
+
+  return words.reduce((longest, word) => {
+    return word.length > longest.length ? word : longest;
+  }, "");
+}
+
+// * Test Cases
+// console.log(longestWord("The quick brown fox")); // Output: 'quick'
+// console.log(
+//   longestWord("A journey of a thousand miles begins with a single step"),
+// ); // Output: 'thousand'
