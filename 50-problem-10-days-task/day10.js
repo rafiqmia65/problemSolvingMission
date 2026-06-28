@@ -47,3 +47,75 @@ function longestWord(sentence) {
 // console.log(
 //   longestWord("A journey of a thousand miles begins with a single step"),
 // ); // Output: 'thousand'
+
+// Problem 48: Rotate an Array [Medium]
+// Description: Write a function rotateArray(arr, k) that rotates an array to the right by k steps.
+// Example:
+// Input: [1,2,3,4,5], k = 2
+// Output: [4,5,1,2,3]
+
+// ======================================
+// Solution 1: Using slice() and concat()
+// Time Complexity: O(n)
+// Space Complexity: O(n)
+// ======================================
+
+function rotateArray(arr, k) {
+  const n = arr.length;
+
+  if (n === 0) return [];
+
+  // Handle cases where k is greater than array length
+  k = k % n;
+
+  return arr.slice(-k).concat(arr.slice(0, -k));
+}
+
+// * Test Cases
+// console.log(rotateArray([1, 2, 3, 4, 5], 2)); // [4, 5, 1, 2, 3]
+// console.log(rotateArray([1, 2, 3, 4, 5], 7)); // [4, 5, 1, 2, 3]
+// console.log(rotateArray([10, 20, 30, 40], 1)); // [40, 10, 20, 30]
+// console.log(rotateArray([1], 5)); // [1]
+// console.log(rotateArray([], 3)); // []
+
+// ======================================
+// Solution 2: Using Reverse Algorithm
+// Time Complexity: O(n)
+// Space Complexity: O(1)
+// ======================================
+
+function rotateArray(arr, k) {
+  const n = arr.length;
+
+  if (n === 0) return [];
+
+  // Handle cases where k is greater than array length
+  k = k % n;
+
+  // Helper function to reverse part of the array
+  function reverse(array, start, end) {
+    while (start < end) {
+      [array[start], array[end]] = [array[end], array[start]];
+      start++;
+      end--;
+    }
+  }
+
+  // Step 1: Reverse the entire array
+  reverse(arr, 0, n - 1);
+
+  // Step 2: Reverse the first k elements
+  reverse(arr, 0, k - 1);
+
+  // Step 3: Reverse the remaining elements
+  reverse(arr, k, n - 1);
+
+  return arr;
+}
+
+// * Test Cases
+// console.log(rotateArray([1, 2, 3, 4, 5], 2)); // [4, 5, 1, 2, 3]
+// console.log(rotateArray([1, 2, 3, 4, 5], 7)); // [4, 5, 1, 2, 3]
+// console.log(rotateArray([10, 20, 30, 40], 1)); // [40, 10, 20, 30]
+// console.log(rotateArray([1], 5)); // [1]
+// console.log(rotateArray([], 3)); // []
