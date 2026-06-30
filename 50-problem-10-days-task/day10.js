@@ -159,3 +159,33 @@ function romanToInt(s) {
 // console.log(romanToInt("IX")); // Output: 9
 // console.log(romanToInt("LVIII")); // Output: 58
 // console.log(romanToInt("MCMXCIV")); // Output: 1994
+
+// * Problem 50: Pascal's Triangle Row  [Medium]
+// Description: Write a function pascalRow(n) that returns the nth row of Pascal's Triangle as an array.
+// Example:
+// Input: 0  → Output: [1]Input: 3  → Output: [1,3,3,1]Input: 4  → Output: [1,4,6,4,1]
+// Hint: Each element is the sum of the two elements above it from the previous row.
+
+function pascalRow(n) {
+  let row = [1];
+
+  for (let i = 1; i <= n; i++) {
+    const newRow = [1];
+
+    for (let j = 1; j < i; j++) {
+      newRow[j] = row[j - 1] + row[j];
+    }
+
+    newRow[i] = 1;
+    row = newRow;
+  }
+
+  return row;
+}
+
+// * Test Cases
+// console.log(pascalRow(0)); // Output: [1]
+// console.log(pascalRow(1)); // Output: [1, 1]
+// console.log(pascalRow(2)); // Output: [1, 2, 1]
+// console.log(pascalRow(3)); // Output: [1, 3, 3, 1]
+// console.log(pascalRow(4)); // Output: [1, 4, 6, 4, 1]
