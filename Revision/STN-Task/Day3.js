@@ -24,3 +24,36 @@ function fizzBuzz(n) {
 }
 
 console.log(fizzBuzz(15)); // Output: [1, 2, "Fizz", 4, "Buzz", "Fizz", 7, 8, "Fizz", "Buzz", 11, "Fizz", 13, 14, "FizzBuzz"]
+
+//* Problem 2: Sum of Array
+// Write a function sumArray(arr) that returns the sum of all numbers in an array using reduce().
+// Example: sumArray([1, 2, 3, 4, 5]) → 15
+
+function sumArray(arr) {
+  // Validate input
+  if (!Array.isArray(arr)) {
+    return "Input must be an array.";
+  }
+
+  // return arr.reduce((accumulator, currentValue) => {
+  //   if (typeof currentValue !== "number") {
+  //     throw new Error("All elements in the array must be numbers.");
+  //   }
+  //   return accumulator + currentValue;
+  // }, 0);
+
+  //** Another approach */
+  let sum = 0;
+
+  for (let i = 0; i < arr.length; i++) {
+    if (typeof arr[i] !== "number") {
+      throw new Error("All elements in the array must be numbers.");
+    }
+    sum += arr[i];
+  }
+
+  return sum;
+}
+
+console.log(sumArray([1, 2, 3, 4, 5])); // Output: 15
+console.log(sumArray([])); // Output: 0
