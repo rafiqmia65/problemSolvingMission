@@ -22,3 +22,27 @@ function removeDuplicates(arr) {
 }
 
 console.log(removeDuplicates([1, 2, 2, 3, 4, 4, 5])); // Output: [1, 2, 3, 4, 5]
+
+//* Problem 2: Flatten Nested Array
+// Write a function flattenArray(arr) that flattens a one-level nested array into a single array.
+// Example: flattenArray([1, [2, 3], [4, 5], 6]) → [1, 2, 3, 4, 5, 6]
+
+function flattenArray(arr) {
+  // Check if input is an array
+  if (!Array.isArray(arr)) {
+    throw new Error("Input must be an array");
+  }
+  let flattenedArray = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    if (Array.isArray(arr[i])) {
+      flattenedArray = flattenedArray.concat(arr[i]);
+    } else {
+      flattenedArray.push(arr[i]);
+    }
+  }
+
+  return flattenedArray;
+}
+
+console.log(flattenArray([1, [2, 3], [4, 5], 6])); // Output: [1, 2, 3, 4, 5, 6]
