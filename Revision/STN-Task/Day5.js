@@ -25,3 +25,32 @@ function capitalizeWords(str) {
 
 console.log(capitalizeWords("hello world from js")); // Output: "Hello World From Js"
 console.log(capitalizeWords(123)); // Output: "Input must be a string."
+
+//* Problem 2: Fibonacci Sequence
+// Write a function fibonacci(n) that returns an array containing the first n numbers of the Fibonacci sequence.
+// Example: fibonacci(7) → [0, 1, 1, 2, 3, 5, 8]
+
+function fibonacci(number) {
+  // Check if input is a number
+  if (typeof number !== "number" || number < 0) {
+    return "Input must be a non-negative number.";
+  }
+
+  let fibSequence = [];
+
+  for (let i = 0; i < number; i++) {
+    if (i === 0) {
+      fibSequence.push(0);
+    } else if (i === 1) {
+      fibSequence.push(1);
+    } else {
+      fibSequence.push(fibSequence[i - 1] + fibSequence[i - 2]);
+    }
+  }
+  return fibSequence;
+}
+
+console.log(fibonacci(7)); // Output: [0, 1, 1, 2, 3, 5, 8]
+console.log(fibonacci(0)); // Output: []
+console.log(fibonacci(1)); // Output: [0]
+console.log(fibonacci(2)); // Output: [0, 1]
