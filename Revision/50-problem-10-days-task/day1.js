@@ -11,3 +11,26 @@ function swapVariables(a, b) {
 
 //* Test Cases
 // console.log(swapVariables(5, 10)); // Output: [10, 5]
+
+//* Problem 2: Check Even or Odd  [Easy]
+// Description: Write a function isEven(n) that returns true if a number is even, and false if it is odd.
+// Example:
+// Input: 4  → Output: trueInput: 7  → Output: false
+// Hint: Use the modulus (%) operator.
+
+function isEven(n) {
+  if (typeof n !== "number") {
+    return "Input must be a number.";
+  }
+
+  if (n % 2 === 0) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+//* Test Cases
+// console.log(isEven(4)); // Output: true
+// console.log(isEven(7)); // Output: false
+// console.log(isEven("not a number")); // Output: "Input must be a number."
