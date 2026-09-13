@@ -34,3 +34,29 @@ function isEven(n) {
 // console.log(isEven(4)); // Output: true
 // console.log(isEven(7)); // Output: false
 // console.log(isEven("not a number")); // Output: "Input must be a number."
+
+//* Problem 3: Find the Largest of Three Numbers  [Easy]
+// Description: Write a function largest(a, b, c) that returns the largest of three numbers.
+// Example:
+// Input: 3, 7, 5  → Output: 7
+// Hint: Use Math.max() or if-else conditions.
+
+function largest(a, b, c) {
+  if (typeof a !== "number" || typeof b !== "number" || typeof c !== "number") {
+    return "All inputs must be numbers.";
+  }
+
+  if (a >= b && a >= c) {
+    return a;
+  } else if (b >= a && b >= c) {
+    return b;
+  } else {
+    return c;
+  }
+}
+
+//* Test Cases
+// console.log(largest(3, 7, 5)); // Output: 7
+// console.log(largest(10, 2, 8)); // Output: 10
+// console.log(largest(1, 1, 1)); // Output: 1
+// console.log(largest("not a number", 2, 3)); // Output: "All inputs must be numbers."
