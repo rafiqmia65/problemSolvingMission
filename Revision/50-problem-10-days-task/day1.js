@@ -60,3 +60,22 @@ function largest(a, b, c) {
 // console.log(largest(10, 2, 8)); // Output: 10
 // console.log(largest(1, 1, 1)); // Output: 1
 // console.log(largest("not a number", 2, 3)); // Output: "All inputs must be numbers."
+
+//* Problem 4: Celsius to Fahrenheit  [Easy]
+// Description: Write a function toFahrenheit(celsius) that converts a Celsius temperature to Fahrenheit.
+// Example:
+// Input: 0   → Output: 32Input: 100 → Output: 212
+// Hint: Formula: (C × 9/5) + 32
+
+function toFahrenheit(celsius) {
+  if (typeof celsius !== "number") {
+    return "Input must be a number.";
+  }
+
+  return (celsius * 9) / 5 + 32;
+}
+
+//* Test Cases
+// console.log(toFahrenheit(0)); // Output: 32
+// console.log(toFahrenheit(100)); // Output: 212
+// console.log(toFahrenheit("not a number")); // Output: "Input must be a number."
