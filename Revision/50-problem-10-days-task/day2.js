@@ -22,6 +22,6 @@ function reverseString(str) {
 }
 
 // * Test cases
-console.log(reverseString("hello")); // Output: "olleh"
-console.log(reverseString("world")); // Output: "dlrow"
-console.log(reverseString(123)); // Throws Error: Input must be a string
+// console.log(reverseString("hello")); // Output: "olleh"
+// console.log(reverseString("world")); // Output: "dlrow"
+// console.log(reverseString(123)); // Throws Error: Input must be a string
