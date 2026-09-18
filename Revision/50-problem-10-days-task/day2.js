@@ -25,3 +25,31 @@ function reverseString(str) {
 // console.log(reverseString("hello")); // Output: "olleh"
 // console.log(reverseString("world")); // Output: "dlrow"
 // console.log(reverseString(123)); // Throws Error: Input must be a string
+
+//* Problem 7: Count Vowels in a String  [Easy]
+// Description: Write a function countVowels(str) that counts and returns the number of vowels (a, e, i, o, u) in a string.
+// Example:
+// Input: 'hello'   → Output: 2Input: 'javascript' → Output: 3
+// Hint: Use a loop or match() with a regular expression.
+
+function countVowels(str) {
+  if (typeof str !== "string") {
+    return "Input must be a string";
+  }
+
+  // Using a loop
+  let count = 0;
+  const vowels = "aeiouAEIOU";
+
+  for (let char of str) {
+    if (vowels.includes(char)) {
+      count++;
+    }
+  }
+  return count;
+}
+
+// * Test cases
+// console.log(countVowels("hello")); // Output: 2
+// console.log(countVowels("javascript")); // Output: 3
+// console.log(countVowels(123)); // Throws Error: Input must be a string
