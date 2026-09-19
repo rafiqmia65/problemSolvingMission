@@ -53,3 +53,37 @@ function countVowels(str) {
 // console.log(countVowels("hello")); // Output: 2
 // console.log(countVowels("javascript")); // Output: 3
 // console.log(countVowels(123)); // Throws Error: Input must be a string
+
+//* Problem 8: Check Palindrome  [Easy]
+// Description: Write a function isPalindrome(str) that returns true if the string reads the same forwards and backwards.
+// Example:
+// Input: 'racecar'  → Output: trueInput: 'hello'    → Output: false
+// Hint: Compare the string to its reverse.
+
+function isPalindrome(str) {
+  if (typeof str !== "string") {
+    return "Input must be a string";
+  }
+
+  // const reversed = str.split("").reverse().join("");
+  // return str === reversed;
+
+  // Alternative approach using a loop
+
+  let left = 0;
+  let right = str.length - 1;
+
+  while (left < right) {
+    if (str[left] !== str[right]) {
+      return false;
+    }
+    left++;
+    right--;
+  }
+  return true;
+}
+
+// * Test cases
+// console.log(isPalindrome("racecar")); // Output: true
+// console.log(isPalindrome("hello")); // Output: false
+// console.log(isPalindrome(12321)); // Throws Error: Input must be a string
