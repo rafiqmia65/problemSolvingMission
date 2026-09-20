@@ -87,3 +87,26 @@ function isPalindrome(str) {
 // console.log(isPalindrome("racecar")); // Output: true
 // console.log(isPalindrome("hello")); // Output: false
 // console.log(isPalindrome(12321)); // Throws Error: Input must be a string
+
+//* Problem 9: Capitalize First Letter of Each Word  [Easy]
+// Description: Write a function titleCase(str) that capitalizes the first letter of every word in a string.
+// Example:
+// Input: 'hello world'  → Output: 'Hello World'
+// Hint: Use split(' '), map(), and join(' ').
+
+function titleCase(str) {
+  if (typeof str !== "string") {
+    return "Input must be a string";
+  }
+
+  let words = str.split(" ");
+  for (let i = 0; i < words.length; i++) {
+    words[i] = words[i].charAt(0).toUpperCase() + words[i].slice(1);
+  }
+  return words.join(" ");
+}
+
+// * Test cases
+// console.log(titleCase("hello world")); // Output: "Hello World"
+// console.log(titleCase("javascript is fun")); // Output: "Javascript Is Fun"
+// console.log(titleCase(123)); // Throws Error: Input must be a string
