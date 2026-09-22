@@ -110,3 +110,34 @@ function titleCase(str) {
 // console.log(titleCase("hello world")); // Output: "Hello World"
 // console.log(titleCase("javascript is fun")); // Output: "Javascript Is Fun"
 // console.log(titleCase(123)); // Throws Error: Input must be a string
+
+//* Problem 10: Count Occurrences of a Character  [Easy]
+// Description: Write a function countChar(str, char) that returns how many times a character appears in a string.
+// Example:
+// Input: 'banana', 'a'  → Output: 3
+// Hint: Use split(char).length - 1 or a loop.
+
+function countChar(str, char) {
+  if (typeof str !== "string" || typeof char !== "string") {
+    return "Input must be a string";
+  }
+
+  // Using a loop
+  // let count = 0;
+
+  // for (let c of str) {
+  //   if (c === char) {
+  //     count++;
+  //   }
+  // }
+  // return count;
+
+  // Alternative approach using split
+
+  return str.split(char).length - 1;
+}
+
+// * Test cases
+// console.log(countChar("banana", "a")); // Output: 3
+// console.log(countChar("hello world", "o")); // Output: 2
+// console.log(countChar(12345, "1")); // Throws Error: Input must be a string
