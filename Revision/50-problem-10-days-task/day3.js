@@ -25,3 +25,33 @@ function sumArray(arr) {
 // console.log(sumArray([1, 2, 3, 4, 5])); // Output: 15
 // console.log(sumArray([])); // Output: 0
 // console.log(sumArray("not an array")); // Output: 'Input must be an array'
+
+//* Problem 12: Find Maximum Value in Array  [Easy]
+// Description: Write a function findMax(arr) that returns the largest number in an array without using Math.max().
+// Example:
+// Input: [3, 1, 7, 2, 9]  → Output: 9
+// Hint: Loop through and track the largest value found.
+
+function findMax(arr) {
+  if (!Array.isArray(arr)) {
+    return "Input must be an array";
+  }
+
+  if (arr.length === 0) {
+    return "Array cannot be empty";
+  }
+
+  let max = arr[0];
+
+  for (let i = 1; i < arr.length; i++) {
+    if (arr[i] > max) {
+      max = arr[i];
+    }
+  }
+  return max;
+}
+
+// *  Test cases
+// console.log(findMax([3, 1, 7, 2, 9])); // Output: 9
+// console.log(findMax([])); // Output: 'Array cannot be empty'
+// console.log(findMax("not an array")); // Output: 'Input must be an array'
