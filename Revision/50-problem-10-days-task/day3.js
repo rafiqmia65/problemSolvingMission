@@ -55,3 +55,22 @@ function findMax(arr) {
 // console.log(findMax([3, 1, 7, 2, 9])); // Output: 9
 // console.log(findMax([])); // Output: 'Array cannot be empty'
 // console.log(findMax("not an array")); // Output: 'Input must be an array'
+
+//* Problem 13: Remove Duplicates from Array  [Easy]
+// Description: Write a function removeDuplicates(arr) that returns a new array with duplicate values removed.
+// Example:
+// Input: [1, 2, 2, 3, 3, 4]  → Output: [1, 2, 3, 4]
+// Hint: Use Set or filter() with indexOf().
+
+function removeDuplicates(arr) {
+  if (!Array.isArray(arr)) {
+    return "Input must be an array";
+  }
+
+  return [...new Set(arr)];
+}
+
+// *  Test cases
+// console.log(removeDuplicates([1, 2, 2, 3, 3, 4])); // Output: [1, 2, 3, 4]
+// console.log(removeDuplicates([])); // Output: []
+// console.log(removeDuplicates("not an array")); // Output: 'Input must be an array'
