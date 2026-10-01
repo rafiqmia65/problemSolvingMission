@@ -74,3 +74,25 @@ function removeDuplicates(arr) {
 // console.log(removeDuplicates([1, 2, 2, 3, 3, 4])); // Output: [1, 2, 3, 4]
 // console.log(removeDuplicates([])); // Output: []
 // console.log(removeDuplicates("not an array")); // Output: 'Input must be an array'
+
+//* Problem 14: Flatten a Nested Array  [Medium]
+// Description: Write a function flattenArray(arr) that flattens one level of a nested array.
+// Example:
+// Input: [1, [2, 3], [4, 5]]  → Output: [1, 2, 3, 4, 5]
+// Hint: Use flat() or reduce() with concat().
+
+function flattenArray(arr) {
+  if (!Array.isArray(arr)) {
+    return "Input must be an array";
+  }
+
+  // return arr.flat();
+
+  // Alternative using reduce and concat
+  return arr.reduce((acc, val) => acc.concat(val), []);
+}
+
+// *  Test cases
+// console.log(flattenArray([1, [2, 3], [4, 5]])); // Output: [1, 2, 3, 4, 5]
+// console.log(flattenArray([])); // Output: []
+// console.log(flattenArray("not an array")); // Output: 'Input must be an array'
