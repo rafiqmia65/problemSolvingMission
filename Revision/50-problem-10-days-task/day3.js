@@ -96,3 +96,35 @@ function flattenArray(arr) {
 // console.log(flattenArray([1, [2, 3], [4, 5]])); // Output: [1, 2, 3, 4, 5]
 // console.log(flattenArray([])); // Output: []
 // console.log(flattenArray("not an array")); // Output: 'Input must be an array'
+
+//* Problem 15: Chunk an Array  [Medium]
+// Description: Write a function chunkArray(arr, size) that splits an array into chunks of a given size.
+// Example:
+// Input: [1,2,3,4,5], 2  → Output: [[1,2],[3,4],[5]]
+// Hint: Use a while loop with slice().
+
+function chunkArray(arr, size) {
+  if (!Array.isArray(arr)) {
+    return "Input must be an array";
+  }
+
+  if (typeof size !== "number" || size <= 0) {
+    return "Size must be a positive number";
+  }
+
+  const chunks = [];
+  let i = 0;
+
+  while (i < arr.length) {
+    chunks.push(arr.slice(i, i + size));
+    i += size;
+  }
+
+  return chunks;
+}
+
+// *  Test cases
+// console.log(chunkArray([1,2,3,4,5], 2)); // Output: [[1,2],[3,4],[5]]
+// console.log(chunkArray([], 2)); // Output: []
+// console.log(chunkArray("not an array", 2)); // Output: 'Input must be an array'
+// console.log(chunkArray([1,2,3,4,5], "not a number")); // Output: 'Size must be a positive number'
