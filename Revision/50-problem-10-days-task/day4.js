@@ -75,6 +75,6 @@ function fizzBuzz(n) {
 }
 
 // * Test cases
-console.log(fizzBuzz(15)); // Output: 1,2,Fizz,4,Buzz,Fizz,7,8,Fizz,Buzz,11,Fizz,13,14,FizzBuzz
-console.log(fizzBuzz(5)); // Output: 1,2,Fizz,4,Buzz
-console.log(fizzBuzz(-1)); // Output: 'Input must be a positive number'
+// console.log(fizzBuzz(15)); // Output: 1,2,Fizz,4,Buzz,Fizz,7,8,Fizz,Buzz,11,Fizz,13,14,FizzBuzz
+// console.log(fizzBuzz(5)); // Output: 1,2,Fizz,4,Buzz
+// console.log(fizzBuzz(-1)); // Output: 'Input must be a positive number'
