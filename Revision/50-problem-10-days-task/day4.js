@@ -78,3 +78,26 @@ function fizzBuzz(n) {
 // console.log(fizzBuzz(15)); // Output: 1,2,Fizz,4,Buzz,Fizz,7,8,Fizz,Buzz,11,Fizz,13,14,FizzBuzz
 // console.log(fizzBuzz(5)); // Output: 1,2,Fizz,4,Buzz
 // console.log(fizzBuzz(-1)); // Output: 'Input must be a positive number'
+
+//* Problem 19: Invert an Object  [Easy]
+// Description: Write a function invertObject(obj) that swaps the keys and values of an object.
+// Example:
+// Input: {a: 1, b: 2}  → Output: {1: 'a', 2: 'b'}
+// Hint: Use Object.entries() and reduce().
+
+function invertObject(obj) {
+  if (typeof obj !== "object" || obj === null) {
+    return "Input must be a non-null object";
+  }
+
+  return Object.entries(obj).reduce((acc, [key, value]) => {
+    acc[value] = key;
+    return acc;
+  }, {});
+}
+
+// * Test cases
+// console.log(invertObject({ a: 1, b: 2 })); // Output: { '1': 'a', '2': 'b' }
+// console.log(invertObject({})); // Output: {}
+// console.log(invertObject("not an object")); // Output: 'Input must be a non-null object'
+// console.log(invertObject(null)); // Output: 'Input must be a non-null object'
