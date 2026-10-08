@@ -101,3 +101,31 @@ function invertObject(obj) {
 // console.log(invertObject({})); // Output: {}
 // console.log(invertObject("not an object")); // Output: 'Input must be a non-null object'
 // console.log(invertObject(null)); // Output: 'Input must be a non-null object'
+
+//* Problem 20: Find Duplicate Values in Array of Objects  [Medium]
+// Description: Given an array of objects, write a function findDuplicateNames(arr) that returns names that appear more than once.
+// Example:
+// Input: [{name:'Ali'},{name:'Sara'},{name:'Ali'}]Output: ['Ali']
+// Hint: Use a frequency map (object) to count occurrences.
+
+function findDuplicateNames(arr) {
+  if (!Array.isArray(arr)) {
+    return "Input must be an array of objects";
+  }
+
+  const nameCount = {};
+
+  for (const obj of arr) {
+    if (obj && typeof obj.name === "string") {
+      nameCount[obj.name] = (nameCount[obj.name] || 0) + 1;
+    }
+  }
+
+  return Object.keys(nameCount).filter((name) => nameCount[name] > 1);
+}
+
+// * Test cases
+// console.log(findDuplicateNames([{ name: 'Ali' }, { name: 'Sara' }, { name: 'Ali' }])); // Output: ['Ali']
+// console.log(findDuplicateNames([{ name: 'John' }, { name: 'Doe' }, { name: 'Jane' }])); // Output: []
+// console.log(findDuplicateNames("not an array")); // Output: 'Input must be an array of objects'
+// console.log(findDuplicateNames([{ name: 'Alice' }, { age: 30 }])); // Output: []
