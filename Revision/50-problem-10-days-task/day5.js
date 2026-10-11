@@ -44,3 +44,33 @@ function fibonacci(n) {
 // console.log(fibonacci(0)); // Output: 0
 // console.log(fibonacci(1)); // Output: 1
 // console.log(fibonacci(-1)); // Output: 'Input must be a non-negative integer'
+
+//* Problem 23: Create a Counter with Closure  [Medium]
+// Description: Write a function makeCounter() that returns an object with increment, decrement, and getCount methods using closure.
+// Example:
+// const c = makeCounter();c.increment(); c.increment();c.getCount(); // 2
+// Hint: Use a variable inside the outer function that inner functions can access.
+
+function makeCounter() {
+  let count = 0;
+
+  return {
+    increment: function () {
+      count++;
+    },
+    decrement: function () {
+      count--;
+    },
+    getCount: function () {
+      return count;
+    },
+  };
+}
+
+// * Test cases
+// const counter = makeCounter();
+// counter.increment();
+// counter.increment();
+// console.log(counter.getCount()); // Output: 2
+// counter.decrement();
+// console.log(counter.getCount()); // Output: 1
