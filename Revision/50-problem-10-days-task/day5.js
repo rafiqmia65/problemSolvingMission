@@ -94,3 +94,30 @@ function curry(fn) {
 // console.log(add(2)(3)); // Output: 5
 // multiply = curry((a, b) => a * b);
 // console.log(multiply(2)(3)); // Output: 6
+
+//* Problem 25: Memoize a Function  [Medium]
+// Description: Write a function memoize(fn) that caches the results of a function so repeated calls with the same input return the cached result.
+// Example:
+// const memoAdd = memoize(n => n + 10);memoAdd(5); // 15 (computed)memoAdd(5); // 15 (from cache)
+// Hint: Use an object as a cache inside the outer function.
+
+function memoize(fn) {
+  const cache = {};
+
+  return function (arg) {
+    if (cache[arg] !== undefined) {
+      return cache[arg];
+    }
+    const result = fn(arg);
+    cache[arg] = result;
+    return result;
+  };
+}
+
+//* Test cases
+// const memoAdd = memoize((n) => n + 10);
+// console.log(memoAdd(5)); // Output: 15 (computed)
+// console.log(memoAdd(5)); // Output: 15 (from cache)
+// const memoFactorial = memoize(factorial);
+// console.log(memoFactorial(5)); // Output: 120 (computed)
+// console.log(memoFactorial(5)); // Output: 120 (from cache)
